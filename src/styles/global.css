@@ -1,0 +1,33 @@
+:root{
+    --infoWidth: 360px;
+    --postWidth: max(33vw, 390px);
+    --postHeight: 240px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Arial;
+    display:flex;
+    background-color: white;
+    color: #2A2A2A;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    margin-right: min(270px, 13.5vw);
+}
+
+main {
+    margin-top : 196px;
+}
+
+img {
+    width: 48px;
+}
