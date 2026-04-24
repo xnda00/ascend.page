@@ -1,27 +1,17 @@
 ---
-const {href} = Astro.props;
 ---
-<h1 id="logo"><a href={href}>Ascene</a></h1>
+<h1 id="logo"><a href="/">Ascene</a></h1>
 
 <style>
     #logo{
         position: absolute;
         right: 0;
         padding-right: max(20px, 5vw);
+        color: #2A2A2A;
     }
     h1{
         font-weight: lighter;
         font-size: 3.5em;
         margin-top: 96px;
-    }
-    a{
-        color: #2A2A2A;
-        text-decoration: none;
-        &:hover{
-            text-decoration: none;
-        }
-        &:active{
-            text-decoration: none;
-        }
     }
 </style>

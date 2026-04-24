@@ -10,7 +10,7 @@ const colors = {
 
 <main>
     <ul id="posts">
-        {allPosts.map((post)=><li class="post" style={`--post-bg: ${colors[String(post.frontmatter.type)]}`}>{post.frontmatter.title}</li>)}
+        {allPosts.map((post)=><a href={post.url}><li class="post" style={`--post-bg: ${colors[String(post.frontmatter.type)]}`}>{post.frontmatter.title}</li></a>)}
     </ul>
 </main>
 
@@ -26,9 +26,14 @@ const colors = {
         width: var(--postWidth);
         background-color: var(--post-bg);
         height: var(--postHeight);
-        border-radius: 21px;
+        border-radius: 16px;
         box-sizing: border-box;
         margin-bottom: 48px;
         padding:16px;
+        transition: all 0.1s ease-in-out;
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.15);
+        }
     }
 </style>

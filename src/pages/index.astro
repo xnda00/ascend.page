@@ -1,10 +1,11 @@
 ---
 import "../styles/global.css"
-import Post from "../components/post.astro"
+import Background from "../components/background.astro"
+import Postcard from "../components/postcard.astro"
 import Info from "../components/info.astro"
 import Logo from "../components/logo.astro"
 
-const allPosts = Object.values(import.meta.glob("./posts/*.md",{eager:true}));
+const allPosts = Object.values(import.meta.glob("/src/pages/posts/*.md",{eager:true}));
 ---
 
 <html lang="en">
@@ -17,8 +18,9 @@ const allPosts = Object.values(import.meta.glob("./posts/*.md",{eager:true}));
 		<title>Ascene</title>
 	</head>
 	<body>
-        <Logo href="/"/>
+        <Background/>
+        <Logo/>
         <Info allPosts={allPosts}/>
-        <Post allPosts={allPosts}/>
+        <Postcard allPosts={allPosts}/>
 	</body>
 </html>

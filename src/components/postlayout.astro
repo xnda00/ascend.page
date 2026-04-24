@@ -1,0 +1,63 @@
+---
+import "../styles/global.css"
+import Background from "../components/background.astro"
+import Info from "../components/info.astro"
+import Logo from "../components/logo.astro"
+const allPosts = Object.values(import.meta.glob("/src/pages/posts/*.md",{eager:true}));
+const { frontmatter } = Astro.props;
+const colors = {
+    "AI": "#CCF7B6",
+    "GFX": "#71B1E4",
+    "ANY": "#FFC1C1"
+}
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Ascene</title>
+	</head>
+	<body>
+        <Background/>
+        <Logo/>
+        <Info allPosts={allPosts}/>
+        
+        <main>
+            <div style="display:flex;justify-content:space-between">
+                <div class="blog-post-header">
+                    <a href="/">home</a>/<a href={frontmatter.url}>{frontmatter.title}</a>
+                </div>
+                <div class="blog-post-header">{frontmatter.date}</div>
+            </div>
+            <section id="blog-post" style={`--post-bg: ${colors[String(frontmatter.type)]}`}>
+                <slot />
+            </section>
+        </main>
+    </body>
+</html>
+
+
+<style>
+.blog-post-header{
+    background-color: white;
+    padding: 16px;
+    height: 64px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    text-align:
+}
+#blog-post{
+    position: relative;
+    top: -24px;
+    width: var(--postWidth);
+    background-color: var(--post-bg);
+    box-sizing: border-box;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.15);
+}
+</style>

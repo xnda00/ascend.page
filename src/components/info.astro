@@ -12,7 +12,7 @@ const {allPosts} = Astro.props;
     <section>
         <h2 id="postlist">Posts</h2>
         <ul>
-            {allPosts.map((post)=><li><span>{post.frontmatter.date} | </span>{post.frontmatter.title}</li>)}
+            {allPosts.map((post)=><a href={post.url}><li><span>{post.frontmatter.date} | </span>{post.frontmatter.title}</li></a>)}
         </ul>
     </section>
 
@@ -28,6 +28,7 @@ const {allPosts} = Astro.props;
         width: var(--infoWidth);
         background-color: #FFE9CB;
         box-sizing: border-box;
+        min-height: 100vh;
         padding: 96px 48px 0px 48px;
         display: flex;
         flex-direction: column;

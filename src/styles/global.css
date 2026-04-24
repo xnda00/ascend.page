@@ -15,7 +15,22 @@ body{
     background-color: white;
     color: #2A2A2A;
 }
-
+a {
+    color: #2A2A2A;
+    text-decoration: none !important;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    &:hover, 
+    &:active, 
+    &:visited, 
+    &:focus {
+        color: #2A2A2A;
+        text-decoration: none !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+}
 ul {
     list-style: none;
 }
