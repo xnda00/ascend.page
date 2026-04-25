@@ -43,6 +43,8 @@ main {
     margin-top : 196px;
 }
 
-img {
-    width: 48px;
+.blog-img {
+    width: 100px;
+    position: relative;
+    
 }
