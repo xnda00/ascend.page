@@ -43,8 +43,25 @@ main {
     margin-top : 196px;
 }
 
+
+
+/* MARKDOWN SECTION */
 .blog-img {
-    width: 100px;
-    position: relative;
-    
+    height: min(45vh, 350px);
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.blog-right {
+    height: min(35vh, 280px);
+    float: right;
+    margin-right: -100px;
+    margin-left: 10px;
+}
+.blog-left {
+    height: min(35vh, 280px);
+    float: left;
+    margin-left: -100px;
+    margin-right: 10px;
 }
