@@ -1,7 +1,7 @@
 ---
-title: "placeholder-1"
+title: "placeholder-3"
 date: 202X-XX-XX
-type: "AI"
+type: "ANY"
 layout: "../postlayout.astro"
 ---
 

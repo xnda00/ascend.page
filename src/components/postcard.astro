@@ -8,11 +8,9 @@ const colors = {
 }
 ---
 
-<main>
-    <ul id="posts">
-        {allPosts.map((post)=><a href={post.url}><li class="post" style={`--post-bg: ${colors[String(post.frontmatter.type)]}`}>{post.frontmatter.title}</li></a>)}
-    </ul>
-</main>
+<ul id="posts">
+    {allPosts.map((post)=><a href={post.url}><li class="post" style={`--post-bg: ${colors[String(post.frontmatter.type)]}`}>{post.frontmatter.title}</li></a>)}
+</ul>
 
 <style>
     #posts{

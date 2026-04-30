@@ -1,15 +1,23 @@
 ---
 ---
-
-<canvas>
-
-</canvas>
+<canvas></canvas>
+<button id="bg-toggle"><img src="/src/img/visibility.svg" alt="visibility-icon"></button>
 
 <script>
+    //CANVAS
     const cnv = document.querySelector('canvas');
     const ctx = cnv.getContext("2d");
     ctx.fillStyle= "lightgrey";
     ctx.fillRect(0, 0, cnv.width, cnv.height);
+
+    //TOGGLE CANVAS
+    const btn = document.querySelector('#bg-toggle');
+    const main = document.querySelector('main');
+    btn.addEventListener('click', () => {
+        if (main){
+            main.classList.toggle("hidden");
+        }
+    });
 </script>
 
 <style>
@@ -20,5 +28,18 @@ canvas{
     top: 0;
     width: 100%;
     height: 100%;
+}
+img {
+    position: fixed;
+    z-index: 99;
+    height: 5vh;
+    right: min(8px, 1vw);
+    bottom: min(8px, 1vw);
+    opacity: 50%;
+    transition: opacity 1s;
+    &:hover{
+        opacity: 100%;
+        cursor: pointer;
+    }
 }
 </style>

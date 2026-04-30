@@ -25,15 +25,14 @@ const colors = {
         <Background/>
         <Logo/>
         <Info allPosts={allPosts}/>
-        
         <main>
-            <div style="display:flex;justify-content:space-between">
+            <div id="blog-post-headers">
                 <div class="blog-post-header">
                     <a href="/">home</a>/<a href={frontmatter.url}>{frontmatter.title}</a>
                 </div>
                 <div class="blog-post-header">{frontmatter.date}</div>
             </div>
-            <section id="blog-post" style={`--post-bg: ${colors[String(frontmatter.type)]}`}>
+            <section id="blog-post-container" style={`--post-bg: ${colors[String(frontmatter.type)]}`}>
                 <slot />
             </section>
         </main>
@@ -42,17 +41,20 @@ const colors = {
 
 
 <style>
+#blog-post-headers {
+    display:flex;
+    justify-content:space-between;
+}
 .blog-post-header{
     background-color: white;
-    padding: 16px;
+    padding: 8px 16px;
     height: 64px;
     box-sizing: border-box;
     border-radius: 16px;
-    text-align:
 }
-#blog-post{
+#blog-post-container{
     position: relative;
-    top: -24px;
+    top: -32px;
     width: var(--postWidth);
     background-color: var(--post-bg);
     box-sizing: border-box;

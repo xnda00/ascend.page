@@ -21,6 +21,8 @@ const allPosts = Object.values(import.meta.glob("/src/pages/posts/*.md",{eager:t
         <Background/>
         <Logo/>
         <Info allPosts={allPosts}/>
-        <Postcard allPosts={allPosts}/>
+        <main>
+            <Postcard allPosts={allPosts}/>
+        </main>
 	</body>
 </html>

@@ -19,7 +19,6 @@ a {
     color: #2A2A2A;
     text-decoration: none !important;
     outline: none;
-    -webkit-tap-highlight-color: transparent;
     &:hover, 
     &:active, 
     &:visited, 
@@ -41,27 +40,37 @@ header {
 
 main {
     margin-top : 196px;
+    opacity: 1;
 }
-
-
-
+/*weird fix for opacity behavior of child components*/
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
 /* MARKDOWN SECTION */
 .blog-img {
-    height: min(45vh, 350px);
+    height: 320px;
+    width: 100%;
     display: block;
-    margin: 10px auto;
+    margin: 16px auto;
     border-radius: 8px;
+    border: 4px solid white;
     object-fit: cover;
 }
 .blog-right {
-    height: min(35vh, 280px);
+    height: 280px;
+    max-width: 240px;
     float: right;
-    margin-right: -100px;
-    margin-left: 10px;
+    margin-right: -80px;
+    margin-left: 16px;
 }
 .blog-left {
-    height: min(35vh, 280px);
+    height: 280px;
+    max-width: 240px;
     float: left;
-    margin-left: -100px;
-    margin-right: 10px;
+    margin-left: -80px;
+    margin-right: 16px;
+}
+#blog-post-container > p{
+    padding-bottom: 16px;
 }
