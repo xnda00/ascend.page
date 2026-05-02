@@ -4,11 +4,8 @@
 <button id="bg-toggle"><img src="/src/img/visibility.svg" alt="visibility-icon"></button>
 
 <script>
-    //CANVAS
-    const cnv = document.querySelector('canvas');
-    const ctx = cnv.getContext("2d");
-    ctx.fillStyle= "lightgrey";
-    ctx.fillRect(0, 0, cnv.width, cnv.height);
+    import * as bg from "./background.js"
+    bg.init();
 
     //TOGGLE CANVAS
     const btn = document.querySelector('#bg-toggle');
