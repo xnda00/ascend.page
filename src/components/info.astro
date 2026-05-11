@@ -4,7 +4,7 @@ const {allPosts} = Astro.props;
 ---
 
 <header>
-    <img src="/src/img/vector.png" alt="profile picture" id="pfp">
+    <img src="/img/blog/vector.png" alt="profile picture" id="pfp">
     <section>
         <h2>Graphics Programming<br/>& Artificial Intelligence</h2>
         <p>In this blog I document my learnings and projects, all of which are related to GFX and AI !</p>
@@ -15,11 +15,10 @@ const {allPosts} = Astro.props;
             {allPosts.map((post)=><a href={post.url}><li><span>{post.frontmatter.date} | </span>{post.frontmatter.title}</li></a>)}
         </ul>
     </section>
-
     <footer>
-        <Social link="https://github.com/xnda00" img="/src/img/github.svg"/>
-        <Social link="https://x.com/xnda00" img="/src/img/x.svg"/>
-        <Social link="https://www.youtube.com/@AsceneStudio" img="/src/img/youtube.svg"/>
+        <a href="https://github.com/xnda00"><img src="/img/blog/github.svg"/></a>
+        <a href="https://x.com/xnda00"><img src="/img/blog/x.svg"/></a>
+        <a href="https://www.youtube.com/@AsceneStudio"><img src="/img/blog/youtube.svg"/></a>
     </footer>
 </header>
 
@@ -36,7 +35,7 @@ const {allPosts} = Astro.props;
         align-items: center;
     }
     #pfp {
-        width: 240px;
+        width: fit-content;
     }
     section {
         display: flex;
@@ -47,12 +46,20 @@ const {allPosts} = Astro.props;
         padding-bottom: 16px;
         font-size: 1.45em;
     }
-    #postlist { 
-        text-transform: uppercase;
-    }
     ul , p{
         font-size: 1.3em;
         text-justify: justify;
+    }
+    #postlist { 
+        text-transform: uppercase;
+    }
+    li {
+        width: 264px;
+        display: block;
+        text-transform:lowercase;
+        text-overflow: ellipsis;
+        overflow:hidden;
+        white-space: nowrap;
     }
     span {
         color:#2a2a2a8b;

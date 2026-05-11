@@ -2,17 +2,28 @@
 import "../styles/global.css"
 const {allPosts} = Astro.props;
 const colors = {
-    "AI": "#CCF7B6",
+    "AI": "#FFC1C1",
     "GFX": "#71B1E4",
-    "ANY": "#FFC1C1"
+    "BOTH": "#FFFCCC",
+    "ANY": "#CCF7B6"
 }
 ---
 
 <ul id="posts">
-    {allPosts.map((post)=><a href={post.url}><li class="post" style={`--post-bg: ${colors[String(post.frontmatter.type)]}`}>{post.frontmatter.title}</li></a>)}
+    {allPosts.map((post)=><a href={post.url}>
+        <li class="post" style={`--post-bg: ${colors[String(post.frontmatter.type)]}`}>
+            <h3><span>{post.frontmatter.title}</span><span>{post.frontmatter.date}</span></h3>
+            <p>{post.frontmatter.summary}</p>
+        </li></a>)}
 </ul>
 
 <style>
+    h3{
+        display: flex;
+        justify-content: space-between;
+        font-weight: 100;
+    }
+
     #posts{
         width: var(--postWidth);
         padding: 0;
@@ -20,6 +31,9 @@ const colors = {
     }
 
     .post{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
         list-style:none;
         width: var(--postWidth);
         background-color: var(--post-bg);
@@ -27,7 +41,7 @@ const colors = {
         border-radius: 16px;
         box-sizing: border-box;
         margin-bottom: 48px;
-        padding:16px;
+        padding:32px;
         transition: all 0.1s ease-in-out;
         &:hover {
             transform: translateY(-2px);

@@ -6,9 +6,10 @@ import Logo from "../components/logo.astro"
 const allPosts = Object.values(import.meta.glob("/src/pages/posts/*.md",{eager:true}));
 const { frontmatter } = Astro.props;
 const colors = {
-    "AI": "#CCF7B6",
+    "AI": "#FFC1C1",
     "GFX": "#71B1E4",
-    "ANY": "#FFC1C1"
+    "BOTH": "#FFFCCC",
+    "ANY": "#CCF7B6"
 }
 ---
 
@@ -28,7 +29,7 @@ const colors = {
         <main>
             <div id="blog-post-headers">
                 <div class="blog-post-header">
-                    <a href="/">home</a>/<a href={frontmatter.url}>{frontmatter.title}</a>
+                    <a href="/">home</a>/<a href={frontmatter.url}>{frontmatter.title.toLowerCase().split(' ').join('-')}</a>
                 </div>
                 <div class="blog-post-header">{frontmatter.date}</div>
             </div>
