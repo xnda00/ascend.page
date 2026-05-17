@@ -1,6 +1,6 @@
 :root{
     --infoWidth: 360px;
-    --postWidth: max(33vw, 400px);
+    --postWidth: 640px;
     --postHeight: 240px;
 }
 
@@ -32,7 +32,7 @@ a {
 }
 
 header {
-    margin-right: min(270px, 13.5vw);
+    margin-right: 160px
 }
 
 main {
@@ -89,4 +89,13 @@ ol, ul {
     & li {
         padding: 2px 0px;
     }
+}
+
+@media (max-width: 1200px) {
+  header {
+    display: none;
+  }
+  main {
+    display: none;
+  }
 }

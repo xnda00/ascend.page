@@ -41,4 +41,5 @@ I was set. And here was the first batch !
 
 ## Developing the background
 
-Développement de mon moteur de rendu minimaliste écrit en webgpu dans le but de faire de multiple projets graphiques sur le web
+Developping my minimalist web gpu rendering engine, for future projects.
+Heres the journey I went though <a href="/posts/webgpu-engine">>article<<a/>

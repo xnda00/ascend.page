@@ -1,9 +1,9 @@
 ---
-title: "placeholder-2"
+title: "lorem-ipsum"
 date: "2026-00-00"
-type: "GFX"
+type: "AI"
 layout: "../postlayout.astro"
-summary: "Short summary of why this blog post is amazing"
+summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 ---
 
 # Lorem ipsum ?
